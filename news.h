@@ -10,8 +10,8 @@
     //*Ocultar(string filtro)
         // getNext()
         // Eliminar()
-    //*Reubicar(noticia, posición):
-        // obtenerPosicion(pDato):
-        // Lenght(pDato):
+    //*Reubicar(string noticia, int posición):
+        // obtenerPosicion(string pDato):
+        // Length (string pDato):
         // Agregar()
         // Eliminar()
