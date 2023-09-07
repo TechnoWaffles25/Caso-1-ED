@@ -54,7 +54,7 @@ public:
 
         curl_global_init(CURL_GLOBAL_ALL);
         curl = curl_easy_init();
-
+    
         // build the URL with the proper entryid
         string url = "https://newsapi.org/v2/everything?q=election&from=2023-08-29&sortBy=popularity&apiKey=61f0db451aa949e893619955b93d0a18";
         curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
@@ -109,7 +109,7 @@ public:
     };
 };
 
-int main2(void)
+/*int prueba(void)
 {
 
     Newsapi newsapi;
@@ -119,4 +119,4 @@ int main2(void)
     //cout << allrecords.at(0)->titular << endl;
 
     return 0;
-}
+}*/

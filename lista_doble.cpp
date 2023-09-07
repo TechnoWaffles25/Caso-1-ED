@@ -29,6 +29,7 @@ struct listadoble {
     // directamente el objeto de tipo "noticia" al q apunta pValue.
 
     int insertar(struct noticia* pValue, int pPosition){
+        std::cout << "tamanno0: " << tamanno << std::endl;
         int result = 0;
         // Creamos un puntero hacia un nuevo nodo 
         //luego asignamos la cantidad de memoria que seva a reservar para la estructura nododoble 
@@ -37,20 +38,29 @@ struct listadoble {
         // Se le asigna la estructura a contener en data del nuevo nodo doble.
         newNodo->data = *pValue;
 
+        std::cout << "tamanno1: " << tamanno << std::endl;
+
+
         // Manejo de inserciones si la lista esa vacia
-        if (tamanno==0) { 
+        if (tamanno==0) {
+            std::cout << "tamanno2: " << tamanno << std::endl;
             // Como solo hay un nodo apunta el inicio y el fin a ese nodo
             start = newNodo; 
             end = newNodo;
+            std::cout << "tamanno3: " << tamanno << std::endl;
             // newNodo sera el siguiente nodo despues del start
             newNodo->next = start; 
             // newNodo sera el nodo anterior al end
             newNodo->previous = end; 
             
+            std::cout << "tamanno4: " << tamanno << std::endl;
+            
+
         } else { // Manejo de inserciones al inicio con mas elementos presentes
             
             // Significa que se quiere introducir un nodo al inicio de la lista
             if (pPosition==0) { 
+                std::cout << "tamanno5: " << tamanno << std::endl;
                 // newNodo se vuelve el primer nodo de la lista
                 newNodo->next =  start; 
                 // newNodo se vuelve el nodo anterior al ultimo
@@ -62,12 +72,17 @@ struct listadoble {
                 // Ahora newNodo es el nuevo primer nodo de la lista
                 start = newNodo; 
 
+                std::cout << "tamanno6: " << tamanno << std::endl;
+                
             } else { // Manejo de inserciones en una posicion especifica
-
+                std::cout << "tamanno7: " << tamanno << std::endl;
                 // currentPosition es como un contador mientras va recorriendo
                 int currentPosition = 0;
                 // Este apunta al primer nodo en la lista
                 nododoble* cursor = start; 
+
+                std::cout << "tamanno8: " << tamanno << std::endl;
+
 
             // Mientras el cursos no llegue al final y la posicion actual sea diferente a la deseada
                 // Sigue avanzando
@@ -84,12 +99,17 @@ struct listadoble {
                 // Ahora el cursos del nodo original apunta al nuevo nodo
                 cursor->next = newNodo;
 
+                std::cout << "tamanno: " << tamanno << std::endl;
+               
+
                 // Se verifica si el cursor llego al final, significadno que el nuevo nodo fue introducido al final de la lista
                 if (cursor==end) {
                     // El puntero del final y el previo al inicio ahora apuntan al nuevo nodo
                     end = newNodo;
                     start->previous = newNodo;
                 }
+                std::cout << "tamanno: " << tamanno << std::endl;
+                
 
             }
         }
@@ -273,7 +293,7 @@ struct listadoble {
     }
 }*/
 };
-/* int main() {
+/*int main() {
     // Crear una instancia de la lista doblemente enlazada
     listadoble lista;
 
@@ -314,5 +334,7 @@ struct listadoble {
 
     // Mostrar el contenido de un nodo en una posición específica
     lista.buscar(1); // Mostrará el contenido del segundo nuevo nodo
+
+    return 0;
 }*/
 #endif

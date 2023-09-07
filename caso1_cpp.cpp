@@ -18,6 +18,12 @@ int main() {
     // Obtenemos el tamaño del vecctor
     int vector_size = allrecords.size();
     cout << "Vector size: " << vector_size << std::endl;
+    
+    int i = 0;
+    while (i < vector_size){
+        cout << allrecords.at(i)->titular<< std::endl;
+        i++;
+    }
 
     // Crear una instancia de la lista doblemente enlazada
     listadoble lista;
@@ -25,8 +31,7 @@ int main() {
     // Insertar noticias en la lista
     int contador = 0;
     cout << "-------------------" << std::endl;
-    cout << allrecords.at(0)->titular<< std::endl;
-    cout << allrecords.at(0)->numero<< std::endl;
+
     /*while (contador < vector_size){
         lista.insertar(allrecords.at(contador), contador++); // Insertar
 
