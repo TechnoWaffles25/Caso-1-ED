@@ -12,7 +12,7 @@
     struct nododoble {
         /* Creamos la estructura del nodo doble que nos permite retrodecer o avanzar 
         junto con la informacion de la noticias de ese nodo */
-        struct noticia data;
+        struct noticia *data;
 
         // El nullptr indica que inicialmente NO HAY NODO ANTERIOR O POSTERIOR
 

@@ -46,7 +46,7 @@ private:
     CURLcode res;
 
 public:
-    vector<struct noticia *> getRecords()
+    vector<struct noticia *> getRecords(string pKey, string pFecha)
     {
 
         vector<struct noticia *> result;
@@ -56,7 +56,7 @@ public:
         curl = curl_easy_init();
     
         // build the URL with the proper entryid
-        string url = "https://newsapi.org/v2/everything?q=election&from=2023-08-29&sortBy=popularity&apiKey=61f0db451aa949e893619955b93d0a18";
+        string url = "https://newsapi.org/v2/everything?q="+pKey+"&from="+pFecha+"&sortBy=popularity&apiKey=61f0db451aa949e893619955b93d0a18";
         curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
         curl_easy_setopt(curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36");
         curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "GET");
